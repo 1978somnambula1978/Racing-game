@@ -1,0 +1,13 @@
+{
+	"name": "CarFamily",
+	"plugin-id": "Sprite",
+	"sid": 983549521668272,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Car",
+		"Car3",
+		"Car2"
+	]
+}
