@@ -480,6 +480,35 @@
 				}
 			],
 			"sid": 999453765784142
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 267004652306468
+				}
+			],
+			"actions": [],
+			"sid": 746496898642681,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 880202818581157,
+							"parameters": {
+								"object": "CarFamily"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 738486694589844
+				}
+			]
 		}
 	],
 	"sid": 449146606646545
