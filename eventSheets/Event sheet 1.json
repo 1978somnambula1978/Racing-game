@@ -1,0 +1,515 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "MaxCheckpoint",
+			"type": "number",
+			"initialValue": "15",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 729717072657394
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 970873421044043,
+					"parameters": {
+						"layer": "\"Track_1\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 727570158129198,
+					"parameters": {
+						"variable": "MaxCheckpoint",
+						"value": "25"
+					}
+				}
+			],
+			"sid": 725440885117151,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 272530237354049,
+							"parameters": {
+								"object": "Car"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 566230720162665
+						}
+					],
+					"actions": [],
+					"sid": 540228111961178
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Car",
+					"sid": 166569404508058
+				}
+			],
+			"actions": [
+				{
+					"id": "set-world-gravity",
+					"objectClass": "Car",
+					"sid": 354332387823348,
+					"behaviorType": "Physics",
+					"parameters": {
+						"gravity": "0"
+					}
+				},
+				{
+					"id": "set-stepping-mode",
+					"objectClass": "Car",
+					"sid": 942405757179193,
+					"disabled": true,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "fixed"
+					}
+				}
+			],
+			"sid": 354644388673344
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 357402023624723,
+					"parameters": {
+						"object": "Car"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 727932938724348,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Car",
+							"sid": 226369056345998,
+							"parameters": {
+								"object": "Checkpoint"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 988257146976907,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Checkpoint",
+									"sid": 941841085950315,
+									"parameters": {
+										"instance-variable": "ChkPoint",
+										"comparison": 0,
+										"value": "MaxCheckpoint"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Car",
+									"sid": 421743958975474,
+									"parameters": {
+										"instance-variable": "Chp",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Car",
+									"sid": 260162196498136,
+									"parameters": {
+										"instance-variable": "Chp",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Car",
+									"sid": 319980712255376,
+									"parameters": {
+										"instance-variable": "Speed",
+										"value": "Car.Speed * random(0.6,1)"
+									}
+								}
+							],
+							"sid": 544762511275487
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 527772933979187
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Car",
+									"sid": 352280389309614,
+									"parameters": {
+										"instance-variable": "Chp",
+										"value": "Checkpoint.ChkPoint + 1"
+									}
+								}
+							],
+							"sid": 290248926552743
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Checkpoint",
+									"sid": 124821063171068,
+									"parameters": {
+										"instance-variable": "Turn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Car",
+									"sid": 880657329450786,
+									"parameters": {
+										"instance-variable": "Turning",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 472650351428284
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 128215569292029
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Car",
+									"sid": 146277631965246,
+									"parameters": {
+										"instance-variable": "Enable",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 220105196033749
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Car",
+							"sid": 442603987980721,
+							"parameters": {
+								"instance-variable": "Enable"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 195623803124083,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 116789791262893,
+									"parameters": {
+										"object": "Checkpoint",
+										"expression": "Checkpoint.ChkPoint",
+										"comparison": 0,
+										"value": "Car.Chp"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 920212641760010,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Car",
+											"sid": 870142349897916,
+											"parameters": {
+												"instance-variable": "Turning"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-force-at-angle",
+											"objectClass": "Car",
+											"sid": 449608990536814,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force": "Car.Speed * 0.5",
+												"angle": "Car.Angle",
+												"image-point": "1"
+											}
+										}
+									],
+									"sid": 807065971768016
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 424675074141236
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-force-at-angle",
+											"objectClass": "Car",
+											"sid": 337245406503272,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force": "Car.Speed",
+												"angle": "Car.Angle",
+												"image-point": "1"
+											}
+										}
+									],
+									"sid": 694783955246965
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "Checkpoint",
+											"sid": 874647903152775,
+											"parameters": {
+												"which": "nearest",
+												"x": "Car.X",
+												"y": "Car.X",
+												"pick-all-tied": true
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-torque-towards-position",
+											"objectClass": "Car",
+											"sid": 826430211103641,
+											"behaviorType": "Physics",
+											"parameters": {
+												"torque": "choose(90,100,120)",
+												"x": "Checkpoint.ImagePointX(0)",
+												"y": "Checkpoint.ImagePointY(0)"
+											}
+										}
+									],
+									"sid": 770978930079117,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 168764792893333
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Checkpoint",
+													"sid": 936150465215443,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 777060247942425
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 954877742211892
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Checkpoint",
+													"sid": 284268391130139,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 253311882825676
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 383279614794555,
+					"parameters": {
+						"object": "Start_Botton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Start_Botton",
+					"sid": 373970382850611
+				},
+				{
+					"id": "set-position",
+					"objectClass": "CountDown",
+					"sid": 875303475950499,
+					"parameters": {
+						"x": "750",
+						"y": "LayoutHeight / 2"
+					}
+				},
+				{
+					"id": "set-animation-speed",
+					"objectClass": "CountDown",
+					"sid": 873776919894123,
+					"parameters": {
+						"speed": "1"
+					}
+				},
+				{
+					"id": "start-animation",
+					"objectClass": "CountDown",
+					"sid": 285916977710980,
+					"parameters": {
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 573169933934842
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "CountDown",
+					"sid": 732064996492085,
+					"parameters": {
+						"comparison": 5,
+						"number": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Car",
+					"sid": 346853308292242,
+					"parameters": {
+						"instance-variable": "Speed",
+						"value": "30"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Car",
+					"sid": 450301014879553,
+					"parameters": {
+						"instance-variable": "Enable",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 999453765784142
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 267004652306468
+				}
+			],
+			"actions": [],
+			"sid": 746496898642681,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 880202818581157,
+							"parameters": {
+								"object": "CarFamily"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 738486694589844
+				}
+			]
+		}
+	],
+	"sid": 449146606646545
+}
