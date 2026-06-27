@@ -1,0 +1,8 @@
+{
+	"name": "JSON_players",
+	"plugin-id": "Json",
+	"sid": 767921503778085,
+	"isGlobal": true,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": []
+}

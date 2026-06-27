@@ -1,0 +1,145 @@
+{
+	"name": "Coin",
+	"plugin-id": "Sprite",
+	"sid": 684781767346897,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "CurrentStep",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 313042281666667
+		},
+		{
+			"name": "Moving",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 584125365774685
+		},
+		{
+			"name": "CurrentRow",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 244808055227279
+		},
+		{
+			"name": "CurrentCol",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 379307092151515
+		},
+		{
+			"name": "Finished",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 277659973817074
+		},
+		{
+			"name": "TargetCol",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 136716084458339
+		},
+		{
+			"name": "Value",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 120194514399950
+		},
+		{
+			"name": "StartCol",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 325571177775538
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 345719759410115
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 118407,
+						"collisionPoly": {
+							"points": [
+								0.5148514851485149,
+								0.0049504950495049506,
+								0.8366336633663366,
+								0.13366336633663367,
+								0.8960396039603961,
+								0.19801980198019803,
+								0.995049504950495,
+								0.4405940594059406,
+								0.995049504950495,
+								0.5643564356435643,
+								0.9653465346534653,
+								0.6831683168316832,
+								0.9257425742574258,
+								0.7623762376237624,
+								0.8910891089108911,
+								0.8118811881188119,
+								0.8118811881188119,
+								0.8910891089108911,
+								0.7623762376237624,
+								0.9257425742574258,
+								0.5594059405940595,
+								0.995049504950495,
+								0.44554455445544555,
+								0.995049504950495,
+								0.16831683168316833,
+								0.8712871287128713,
+								0.13366336633663367,
+								0.8366336633663366,
+								0.0049504950495049506,
+								0.48514851485148514,
+								0.07425742574257425,
+								0.24752475247524752,
+								0.12376237623762376,
+								0.1782178217821782,
+								0.1782178217821782,
+								0.12376237623762376,
+								0.24752475247524752,
+								0.07425742574257425
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 258895432464886,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

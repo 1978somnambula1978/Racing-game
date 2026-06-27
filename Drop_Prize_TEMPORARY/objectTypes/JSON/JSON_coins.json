@@ -1,0 +1,8 @@
+{
+	"name": "JSON_coins",
+	"plugin-id": "Json",
+	"sid": 252025159408345,
+	"isGlobal": true,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": []
+}

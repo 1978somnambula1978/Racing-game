@@ -1,0 +1,34 @@
+{
+	"name": "UI_MultyPLayer",
+	"plugin-id": "Spritefont2",
+	"sid": 583164292233849,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 524425094578983
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 823513704684870
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 2048,
+		"height": 2048,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 1553470,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

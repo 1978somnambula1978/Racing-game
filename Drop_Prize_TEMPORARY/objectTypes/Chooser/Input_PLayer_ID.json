@@ -1,0 +1,9 @@
+{
+	"name": "Input_PLayer_ID",
+	"plugin-id": "TextBox",
+	"sid": 744063513252692,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": []
+}

@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net10.0\playergenerator.exe
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net10.0\playergenerator.deps.json
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net10.0\playergenerator.runtimeconfig.json
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net10.0\playergenerator.dll
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net10.0\playergenerator.pdb
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.AssemblyInfo.cs
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.sourcelink.json
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.dll
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\refint\playergenerator.dll
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.pdb
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\playergenerator.genruntimeconfig.cache
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net10.0\ref\playergenerator.dll

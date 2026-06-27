@@ -1,0 +1,504 @@
+{
+	"name": "Chooser_Event",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 240406022739502
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Input_PLayer_ID",
+					"sid": 719480317646825,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Input_PLayer_ID",
+					"sid": 828148636449267,
+					"parameters": {
+						"property-name": "\"text-align\"",
+						"value": "\"center\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Input_PLayer_ID",
+					"sid": 248370515994177,
+					"parameters": {
+						"property-name": "\"border-radius\"",
+						"value": "\"15px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Input_PLayer_ID",
+					"sid": 227764526172352,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"46px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Input_PLayer_ID",
+					"sid": 842178243691412,
+					"parameters": {
+						"property-name": "\"background\"",
+						"value": "\"none\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Input_PLayer_ID",
+					"sid": 733166196201644,
+					"parameters": {
+						"property-name": "\"color\"",
+						"value": "\"red\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "OK",
+					"sid": 173988103731711,
+					"parameters": {
+						"property-name": "\"border-radius\"",
+						"value": "\"10px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "OK",
+					"sid": 844258524892850,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"52px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "OK",
+					"sid": 130908975298833,
+					"parameters": {
+						"property-name": "\"background\"",
+						"value": "\"none\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "OK",
+					"sid": 471612569562053,
+					"parameters": {
+						"property-name": "\"color\"",
+						"value": "\"yellow\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UI_Project",
+					"sid": 812520671763850,
+					"parameters": {
+						"text": "projectname&newline&projectversion"
+					}
+				}
+			],
+			"sid": 135435913301062
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "OK",
+					"sid": 670718180842324
+				}
+			],
+			"actions": [],
+			"sid": 435675032321100,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "Input_PLayer_ID",
+							"sid": 546478205920284,
+							"parameters": {
+								"text": "\"\"",
+								"case": "case-insensitive"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 519397847068589,
+							"parameters": {
+								"variable": "Player_ID",
+								"value": "int(Input_PLayer_ID.Text)"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 274268995053500,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 698993605917441
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 206291917607748,
+					"parameters": {
+						"object": "Resize"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 420345830986577,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 754367756812219
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 346796139075013,
+							"parameters": {
+								"seconds": "0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 776379320831018
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Resize",
+							"sid": 424631574375481,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 843247346759247
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 604127279597872
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 422640614741042,
+							"parameters": {
+								"seconds": "0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 739661345378461,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Resize",
+							"sid": 922262364705818,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 135087052184770
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Попытки вызвать другую программу через констракт"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 343315366987588,
+					"parameters": {
+						"key": 120
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "run-file",
+					"objectClass": "FileSystem",
+					"sid": 176287652802244,
+					"parameters": {
+						"picker-tag": "\"\"",
+						"file-path": "\"notepad.exe\"",
+						"arguments": "\"\"",
+						"file-tag": "\"\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 261460084886731,
+					"parameters": {
+						"type": "log",
+						"message": "\"F9 Is Pressed\""
+					}
+				}
+			],
+			"sid": 815512153920732,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "desktop-features-supported",
+							"objectClass": "FileSystem",
+							"sid": 413896857307271
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 940208211162365,
+							"parameters": {
+								"type": "log",
+								"message": "\"Desktop OK\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UI_ID2",
+							"sid": 332590804897131,
+							"parameters": {
+								"text": "\"Desktop OK\""
+							}
+						}
+					],
+					"sid": 668231555665932
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 375863244485158
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 814499113903297,
+							"parameters": {
+								"type": "log",
+								"message": "\"Desktop NOT OK\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UI_ID2",
+							"sid": 673163901555655,
+							"parameters": {
+								"text": "\"Desktop NOT OK\""
+							}
+						}
+					],
+					"sid": 936183782480188
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 929583348385053,
+					"parameters": {
+						"key": 119
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "show-folder-picker",
+					"objectClass": "FileSystem",
+					"sid": 898006255379061,
+					"parameters": {
+						"picker-tag": "\"test\"",
+						"mode": "read-write",
+						"id": "\"\"",
+						"start-in": "default"
+					}
+				}
+			],
+			"sid": 212425081246094,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 633991394854406
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-picker-complete",
+					"objectClass": "FileSystem",
+					"sid": 571255902053566,
+					"parameters": {
+						"picker-tag": "\"test\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UI_ID2",
+					"sid": 204551712080697,
+					"parameters": {
+						"text": "\"Folder Selected\"&FileSystem.FolderPath"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 737275123905110,
+					"parameters": {
+						"type": "log",
+						"message": "\"Picker Compled\"&FileSystem.FolderPath"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 427091507645066,
+					"parameters": {
+						"type": "log",
+						"message": "\"TAG---\"& FileSystem.PickerTag"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 671459374487213,
+					"parameters": {
+						"type": "log",
+						"message": "\"PATH---\"& FileSystem.FolderPath"
+					}
+				},
+				{
+					"id": "write-text-file",
+					"objectClass": "FileSystem",
+					"sid": 474361093713351,
+					"parameters": {
+						"picker-tag": "\"test\"",
+						"folder-path": "FileSystem.FolderPath",
+						"file-tag": "\"hello.txt\"",
+						"text": "\"HELLO WORLD\"",
+						"mode": "overwrite"
+					}
+				}
+			],
+			"sid": 581374922616404
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-file-operation-complete",
+					"objectClass": "FileSystem",
+					"sid": 549274167274228
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "UI_ID2",
+					"sid": 827915547226982,
+					"parameters": {
+						"text": "newline&\"Write OK\""
+					}
+				}
+			],
+			"sid": 238006830060415
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-file-operation-error",
+					"objectClass": "FileSystem",
+					"sid": 939567652653753
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "UI_ID2",
+					"sid": 720300987284079,
+					"parameters": {
+						"text": "newline&\"Write ERROR\""
+					}
+				}
+			],
+			"sid": 484734378231632
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 434062475845115
+		}
+	],
+	"sid": 924093456705304
+}

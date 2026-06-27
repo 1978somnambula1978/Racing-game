@@ -1,0 +1,34 @@
+{
+	"name": "UI_ID",
+	"plugin-id": "Spritefont2",
+	"sid": 856970278647402,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 617428581915170
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 799394903983886
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 2048,
+		"height": 2048,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 3496154,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

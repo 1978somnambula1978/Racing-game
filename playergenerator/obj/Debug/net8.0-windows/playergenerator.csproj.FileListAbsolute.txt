@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net8.0-windows\playergenerator.exe
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net8.0-windows\playergenerator.deps.json
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net8.0-windows\playergenerator.runtimeconfig.json
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net8.0-windows\playergenerator.dll
+C:\Users\user\Desktop\Git\playergenerator\bin\Debug\net8.0-windows\playergenerator.pdb
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.AssemblyInfo.cs
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.sourcelink.json
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.dll
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\refint\playergenerator.dll
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.pdb
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\playergenerator.genruntimeconfig.cache
+C:\Users\user\Desktop\Git\playergenerator\obj\Debug\net8.0-windows\ref\playergenerator.dll

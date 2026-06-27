@@ -1,0 +1,90 @@
+{
+	"name": "GridCell",
+	"plugin-id": "Sprite",
+	"sid": 867693877404273,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "Row",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 476249722071044
+		},
+		{
+			"name": "Col",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 879793067957552
+		},
+		{
+			"name": "CellType",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 947451005737131
+		},
+		{
+			"name": "Value",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 131494945960410
+		},
+		{
+			"name": "Occuped",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 461853519321583
+		},
+		{
+			"name": "PrizeType",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 415018432235375
+		},
+		{
+			"name": "CellID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 404868641461531
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 120,
+						"height": 120,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 217615,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 816987055285891,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

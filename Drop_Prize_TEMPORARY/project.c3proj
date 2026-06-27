@@ -1,0 +1,472 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 48703,
+	"name": "Drop_Prize_Game_Temporary",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "DrawingCanvas",
+			"name": "Drawing canvas",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "FileSystem",
+			"name": "File system",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "ac75piy381e",
+	"objectTypes": {
+		"items": [
+			"Coin",
+			"PathPoint",
+			"Start",
+			"Row",
+			"Collumn",
+			"GridCell",
+			"CoinSteel",
+			"DEBAGING",
+			"CoinGhost",
+			"FieldMask",
+			"UI_CoinGhost",
+			"UI_CoinSteel",
+			"MoveIcon",
+			"UI_FinalScore",
+			"x",
+			"UI_MultyPLayer",
+			"UI_Line_Bonus",
+			"UI_ID",
+			"TV_Animation",
+			"BG",
+			"BG_1",
+			"MINI_TV_Animation",
+			"Win",
+			"Exit",
+			"NewPLayer",
+			"Resize",
+			"UI_Project",
+			"UI_ID2"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Input_PLayer_ID",
+					"OK",
+					"UI_Eror"
+				],
+				"subfolders": [],
+				"name": "Chooser"
+			},
+			{
+				"items": [
+					"AJAX",
+					"Browser",
+					"Date",
+					"FileSystem",
+					"Touch",
+					"Keyboard",
+					"LocalStorage",
+					"DrawingCanvas"
+				],
+				"subfolders": [],
+				"name": "SYSTEM"
+			},
+			{
+				"items": [
+					"Array_Stage_Coin",
+					"CoinBonuses",
+					"CoinTypes",
+					"CoinValues",
+					"PathArray"
+				],
+				"subfolders": [],
+				"name": "ARRAY"
+			},
+			{
+				"items": [
+					"JSON_coins",
+					"JSON_players",
+					"JSON_results",
+					"JSON_Settings",
+					"JSON_ResultsQueue"
+				],
+				"subfolders": [],
+				"name": "JSON"
+			}
+		]
+	},
+	"functionsName": "Functions",
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"CoinGhost",
+				"UI_CoinGhost"
+			]
+		},
+		{
+			"members": [
+				"CoinSteel",
+				"UI_CoinSteel"
+			]
+		}
+	],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Game",
+			"Chooser"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Game_Event",
+			"Chooser_Event"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 760466160184765,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 726613754467622,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 615577053779637,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 200092649208238,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 157610911962177,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 311436228017357,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 352375947186562,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "coins.json",
+					"type": "application/json",
+					"sid": 934584611511081,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "players.json",
+					"type": "application/json",
+					"sid": 655469665140479,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "results____.json",
+					"type": "application/json",
+					"sid": 335515327836673,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "save.js",
+					"type": "application/javascript",
+					"sid": 677146531227024,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Settings.json",
+					"type": "application/json",
+					"sid": 642912709239327,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Basic_players.json",
+					"type": "application/json",
+					"sid": 319420108049138,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [
+			"Flowchart 1"
+		],
+		"subfolders": []
+	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.14",
+		"autoIncrementVersion": true,
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "regular",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"fixedFramerate": 30,
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress-logo",
+		"preloadSounds": true,
+		"uidAllocationMode": "increment",
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"scriptsType": "module"
+	},
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
+	"firstLayout": "Chooser"
+}

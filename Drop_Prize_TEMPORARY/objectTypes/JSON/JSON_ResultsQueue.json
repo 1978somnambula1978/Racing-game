@@ -1,0 +1,8 @@
+{
+	"name": "JSON_ResultsQueue",
+	"plugin-id": "Json",
+	"sid": 105780193649484,
+	"isGlobal": true,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": []
+}

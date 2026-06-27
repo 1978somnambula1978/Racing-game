@@ -1,0 +1,62 @@
+{
+	"name": "PathPoint",
+	"plugin-id": "Sprite",
+	"sid": 604165859084492,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "Step",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 112653438728238
+		},
+		{
+			"name": "Row",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 602910034750382
+		},
+		{
+			"name": "Col",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 225563059006519
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3666354,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 164262976000575,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

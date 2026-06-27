@@ -1,0 +1,9 @@
+
+        {
+            "StopChance": 25,
+            "StepBonus": 10,
+            "EmptyChance": 10,
+            "N": 3,
+            "PrizeFund": 15000,
+            "MinPrizeFund": 500
+        }
