@@ -468,6 +468,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "START_Prize_Fund",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 478457008734031
+		},
+		{
+			"eventType": "variable",
 			"name": "PrizeFund",
 			"type": "number",
 			"initialValue": "0",
@@ -597,6 +607,15 @@
 							"parameters": {
 								"variable": "MinPrizeFund",
 								"value": "JSON_Settings.Get(\"MinPrizeFund\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 167801058811131,
+							"parameters": {
+								"variable": "START_Prize_Fund",
+								"value": "PrizeFund"
 							}
 						},
 						{
@@ -824,16 +843,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 630314869200683
-		},
-		{
-			"eventType": "variable",
-			"name": "StartCoinCreated",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 986501425157954
 		},
 		{
 			"eventType": "comment",
@@ -1121,213 +1130,316 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "ВЫПАДЕНИЕ НАЧАЛЬНЫХ МОНЕТ ПРИ СТАРТЕ ИГРОКА"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 390976313600387,
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 922475106392855,
 					"parameters": {
-						"key": 49
+						"tag": "\"coins\""
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 667008828499905,
+					"parameters": {
+						"variable": "CoinCount",
+						"value": "0"
+					}
+				}
+			],
 			"sid": 319812564980494,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-random-instance",
+							"id": "repeat",
 							"objectClass": "System",
-							"sid": 968820704529351,
+							"sid": 416158637990896,
 							"parameters": {
-								"object": "GridCell"
+								"count": "100"
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 481310225623385,
-							"parameters": {
-								"type": "log",
-								"message": "GridCell.Row&\",\"&GridCell.Col"
-							}
-						}
-					],
-					"sid": 458138420501933,
+					"actions": [],
+					"sid": 897190951137335,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "GridCell",
-									"sid": 420363532244779,
-									"parameters": {
-										"instance-variable": "Row",
-										"comparison": 4,
-										"value": "0"
-									}
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "GridCell",
-									"sid": 489793512881722,
-									"parameters": {
-										"instance-variable": "Occuped"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 688888119537472,
-									"parameters": {
-										"type": "log",
-										"message": "GridCell.Row&\",\"&GridCell.Col"
-									}
-								}
-							],
-							"sid": 220105024653316,
-							"disabled": true
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 825071492628657
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "repeat",
-					"objectClass": "System",
-					"sid": 706054620980860,
-					"parameters": {
-						"count": "10"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 874599991195946,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 972466462842973,
-							"parameters": {
-								"first-value": "StartCoinCreated",
-								"comparison": 2,
-								"second-value": "StartCoin"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 858536066237840,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-random-instance",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 302069028736522,
+									"sid": 275672003338416,
 									"parameters": {
-										"object": "GridCell"
+										"first-value": "CoinCount",
+										"comparison": 2,
+										"second-value": "StartCoin"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 362721384568888,
-							"disabled": true,
+							"sid": 743645964523244,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-comparison",
+											"id": "pick-random-instance",
 											"objectClass": "System",
-											"sid": 127431413333506,
+											"sid": 263389231380641,
 											"parameters": {
-												"object": "GridCell",
-												"expression": "GridCell.Row",
-												"comparison": 4,
-												"value": "0"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "GridCell",
-											"sid": 277118277090032,
-											"parameters": {
-												"instance-variable": "Occuped"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 966215907202235,
-											"parameters": {
-												"first-value": "CoinTypes.At(GridCell.X,GridCell.Y,0)",
-												"comparison": 0,
-												"second-value": "\"normal\""
+												"object": "GridCell"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 603294328437260,
+									"children": [
 										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 494203202418679,
-											"parameters": {
-												"object-to-create": "CoinSteel",
-												"layer": "\"Coins\"",
-												"x": "GridCell.X",
-												"y": "GridCell.Y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 288646365318447,
-											"parameters": {
-												"variable": "StartCoinCreated",
-												"value": "1"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "GridCell",
-											"sid": 280765518925252,
-											"parameters": {
-												"instance-variable": "Occuped",
-												"value": "true"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "GridCell",
+													"sid": 668699617609525,
+													"parameters": {
+														"instance-variable": "Row",
+														"comparison": 4,
+														"value": "0"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "GridCell",
+													"sid": 791517348177906,
+													"parameters": {
+														"instance-variable": "Occuped"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 186211796479504,
+													"parameters": {
+														"first-value": "CoinTypes.At(GridCell.Col, GridCell.Row, 0)",
+														"comparison": 0,
+														"second-value": "\"normal\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 616420253065333,
+													"parameters": {
+														"object-to-create": "CoinSteel",
+														"layer": "\"Coins\"",
+														"x": "GridCell.X",
+														"y": "GridCell.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-y",
+													"objectClass": "UI_CoinSteel",
+													"sid": 985494607244094,
+													"parameters": {
+														"y": "Self.Y + 10"
+													}
+												},
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "UI_CoinSteel",
+													"sid": 586216320353851,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "CoinSteel",
+														"x": true,
+														"y": true,
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "UI_CoinSteel",
+													"sid": 623706967855485,
+													"parameters": {
+														"instance-variable": "Parent_UID",
+														"value": "CoinSteel.UID"
+													}
+												},
+												{
+													"type": "comment",
+													"text": "ЦЕНА МОНЕТЫ, БОНУС И ТИП БОНУСА В ПЕРЕМЕННЫЕ"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "CoinSteel",
+													"sid": 263047799846593,
+													"parameters": {
+														"instance-variable": "BaseValue",
+														"value": "ceil(CoinValues.At(GridCell.Col,GridCell.Row,0) * Player_Multiplayer)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "CoinSteel",
+													"sid": 842005052983791,
+													"parameters": {
+														"instance-variable": "BonusType",
+														"value": "CoinTypes.At(GridCell.Col,GridCell.Row,0)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "CoinSteel",
+													"sid": 968560651690938,
+													"parameters": {
+														"instance-variable": "BonusValue",
+														"value": "CoinBonuses.At(GridCell.Col,GridCell.Row,0)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "CoinSteel",
+													"sid": 226505675972125,
+													"parameters": {
+														"instance-variable": "CurrentCol",
+														"value": "GridCell.Col"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "CoinSteel",
+													"sid": 771751767869294,
+													"parameters": {
+														"instance-variable": "CurrentRow",
+														"value": "GridCell.Row"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 712149632523461,
+													"parameters": {
+														"variable": "CoinCount",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "GridCell",
+													"sid": 169753817362252,
+													"parameters": {
+														"instance-variable": "Occuped",
+														"value": "true"
+													}
+												},
+												{
+													"type": "comment",
+													"text": "АНИМАЦИЯ ЗНАЧЕНИЯ МОНЕТЫ"
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "CoinSteel",
+													"sid": 873666507304755,
+													"parameters": {
+														"frame-number": "2"
+													}
+												},
+												{
+													"id": "tween-value",
+													"objectClass": "UI_CoinSteel",
+													"sid": 430129516093977,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"CoinScore\"",
+														"start-value": "0",
+														"end-value": "CoinSteel.BaseValue",
+														"time": "0.5",
+														"ease": "easeoutcubic",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 306137371649421,
+													"parameters": {
+														"variable": "normal",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 323851564486796
 										}
-									],
-									"sid": 280878310854920,
-									"disabled": true
+									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 895208317939601,
+									"parameters": {
+										"first-value": "CoinCount",
+										"comparison": 0,
+										"second-value": "StartCoin"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-loop",
+									"objectClass": "System",
+									"sid": 107531604210727
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 733297495661746,
+									"parameters": {
+										"seconds": "0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 161145262763787,
+									"parameters": {
+										"type": "log",
+										"message": "CoinSteel.Count"
+									}
+								},
+								{
+									"callFunction": "START",
+									"sid": 852999046658556
+								}
+							],
+							"sid": 679958399816661
 						}
 					]
 				}
@@ -2807,6 +2919,10 @@
 																				"variable": "normal",
 																				"value": "1"
 																			}
+																		},
+																		{
+																			"callFunction": "NORMAL",
+																			"sid": 676929632459446
 																		}
 																	],
 																	"sid": 172108434942492
@@ -2914,6 +3030,27 @@
 																		}
 																	],
 																	"sid": 313353528976001
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "set-eventvar-value",
+																			"objectClass": "System",
+																			"sid": 764255268937103,
+																			"parameters": {
+																				"variable": "Stage",
+																				"value": "6"
+																			}
+																		},
+																		{
+																			"callFunction": "Animation_Winner",
+																			"sid": 963393757032222
+																		}
+																	],
+																	"sid": 832519518271549,
+																	"disabled": true
 																}
 															]
 														}
@@ -3658,6 +3795,22 @@
 					"parameters": {
 						"text": "\"Player: \"& Player_ID"
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UI_FinalScore",
+					"sid": 480604331032193,
+					"parameters": {
+						"text": "\"Your win: \"& FinalScore"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UI_PrizeFund",
+					"sid": 530545638435516,
+					"parameters": {
+						"text": "\"LEFT MONEY: \"&newline& PrizeFund"
+					}
 				}
 			],
 			"sid": 262384738276349
@@ -4082,18 +4235,53 @@
 					"parameters": {
 						"text": "\"Your win: \"& AnimatedScore"
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 417330502498460,
-					"parameters": {
-						"type": "log",
-						"message": "AnimatedScore"
-					}
 				}
 			],
 			"sid": 663261699148033
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "MINI_TV_Animation",
+					"sid": 843549618073691,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Mini_AnimScore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 795637215883165,
+					"parameters": {
+						"variable": "Mini_AnimatedScore",
+						"value": "round(MINI_TV_Animation.Tween.Value(\"Mini_AnimScore\"))"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UI_PrizeFund",
+					"sid": 434503933837487,
+					"parameters": {
+						"text": "\"LEFT MONEY: \"&newline& Mini_AnimatedScore"
+					}
+				}
+			],
+			"sid": 725304374732823
+		},
+		{
+			"eventType": "variable",
+			"name": "Mini_AnimatedScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 306986227603895
 		},
 		{
 			"eventType": "variable",
@@ -4106,7 +4294,7 @@
 			"sid": 527952626387069
 		},
 		{
-			"functionName": "RunTweenScore",
+			"functionName": "UpdateUIScore",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -4150,6 +4338,39 @@
 						}
 					],
 					"sid": 408341446146482
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "stop-tweens",
+							"objectClass": "MINI_TV_Animation",
+							"sid": 810689535137691,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"MIni_AnimScore\""
+							}
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "MINI_TV_Animation",
+							"sid": 484703876495270,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Mini_AnimScore\"",
+								"start-value": "Mini_AnimatedScore",
+								"end-value": "PrizeFund",
+								"time": "0.5",
+								"ease": "easeoutcubic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 458624400098049
 				}
 			]
 		},
@@ -4540,7 +4761,7 @@
 					"conditions": [],
 					"actions": [
 						{
-							"callFunction": "Animation",
+							"callFunction": "Animation_Winner",
 							"sid": 115106322665601
 						}
 					],
@@ -4606,7 +4827,7 @@
 			"sid": 186525839045374
 		},
 		{
-			"functionName": "Animation",
+			"functionName": "Animation_Winner",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -5005,7 +5226,7 @@
 									}
 								},
 								{
-									"callFunction": "Animation",
+									"callFunction": "Animation_Winner",
 									"sid": 189059385083598
 								}
 							],
@@ -5122,7 +5343,7 @@
 									}
 								},
 								{
-									"callFunction": "Animation",
+									"callFunction": "Animation_Winner",
 									"sid": 775805718746818
 								}
 							],
@@ -5336,7 +5557,7 @@
 									}
 								},
 								{
-									"callFunction": "Animation",
+									"callFunction": "Animation_Winner",
 									"sid": 184030075526447
 								}
 							],
@@ -5453,7 +5674,7 @@
 									}
 								},
 								{
-									"callFunction": "Animation",
+									"callFunction": "Animation_Winner",
 									"sid": 542267334937076
 								}
 							],
@@ -5686,7 +5907,7 @@
 									}
 								},
 								{
-									"callFunction": "Animation",
+									"callFunction": "Animation_Winner",
 									"sid": 915665295854587
 								}
 							],
@@ -5804,7 +6025,7 @@
 									}
 								},
 								{
-									"callFunction": "Animation",
+									"callFunction": "Animation_Winner",
 									"sid": 520516313505203
 								}
 							],
@@ -5950,7 +6171,16 @@
 											}
 										},
 										{
-											"callFunction": "RunTweenScore",
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 102086031540482,
+											"parameters": {
+												"variable": "PrizeFund",
+												"value": "CoinSteel.FinalValue"
+											}
+										},
+										{
+											"callFunction": "UpdateUIScore",
 											"sid": 474185053355471
 										},
 										{
@@ -5990,7 +6220,7 @@
 									}
 								},
 								{
-									"callFunction": "Animation",
+									"callFunction": "Animation_Winner",
 									"sid": 175278008226426
 								}
 							],
@@ -6100,7 +6330,7 @@
 									}
 								},
 								{
-									"callFunction": "RunTweenScore",
+									"callFunction": "UpdateUIScore",
 									"sid": 393846213747347
 								},
 								{
@@ -6193,17 +6423,11 @@
 					}
 				},
 				{
-					"callFunction": "Animation",
+					"callFunction": "Animation_Winner",
 					"sid": 632009024244748
 				}
 			],
 			"sid": 493520658777920
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 960439922103540
 		},
 		{
 			"functionName": "Update_Debaging",
@@ -6238,149 +6462,6 @@
 						}
 					],
 					"sid": 376566144324820
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 594114546770380,
-					"parameters": {
-						"variable": "StageIndex",
-						"comparison": 2,
-						"value": "Array_Stage_Coin.Width"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 446089978457598,
-					"parameters": {
-						"variable": "CurrentCoin_UID",
-						"value": "Array_Stage_Coin.At(StageIndex)"
-					}
-				}
-			],
-			"sid": 677089287528678,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-comparison",
-							"objectClass": "System",
-							"sid": 306362867631243,
-							"parameters": {
-								"object": "CoinSteel",
-								"expression": "CoinSteel.UID",
-								"comparison": 0,
-								"value": "CurrentCoin_UID"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 942601279123408,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "CoinSteel",
-									"sid": 603881006916840,
-									"parameters": {
-										"instance-variable": "BonusType",
-										"comparison": 0,
-										"value": "\"normal\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "CoinSteel",
-									"sid": 250822413109884,
-									"parameters": {
-										"instance-variable": "FinalValue",
-										"value": "CoinSteel.BaseValue + FlatBonus"
-									}
-								}
-							],
-							"sid": 335051298984398,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 962099754107590,
-											"parameters": {
-												"object": "UI_CoinSteel",
-												"expression": "UI_CoinSteel.Parent_UID",
-												"comparison": 0,
-												"value": "CoinSteel.UID"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "tween-value",
-											"objectClass": "UI_CoinSteel",
-											"sid": 994379370526642,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"FlatScore\"",
-												"start-value": "CoinSteel.BaseValue",
-												"end-value": "CoinSteel.FinalValue",
-												"time": "0.5",
-												"ease": "easeoutcubic",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										}
-									],
-									"sid": 642260414179894,
-									"disabled": true
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "CoinSteel",
-									"sid": 144829862838611,
-									"parameters": {
-										"instance-variable": "BonusType",
-										"comparison": 0,
-										"value": "\"bonus_flat\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "start-fade",
-									"objectClass": "CoinSteel",
-									"sid": 649805027697289,
-									"behaviorType": "Fade"
-								}
-							],
-							"sid": 441948128021393,
-							"disabled": true
-						}
-					]
 				}
 			]
 		},
@@ -7114,60 +7195,7 @@
 		},
 		{
 			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 963366817609280,
-					"parameters": {
-						"key": 119
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-path",
-					"objectClass": "JSON_ResultsQueue",
-					"sid": 767597271208111,
-					"parameters": {
-						"path": "\"results\""
-					}
-				},
-				{
-					"id": "push-value",
-					"objectClass": "JSON_ResultsQueue",
-					"sid": 889627095723435,
-					"parameters": {
-						"where": "back",
-						"path": "\"results\"",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-json",
-					"objectClass": "JSON_ResultsQueue",
-					"sid": 939348662275657,
-					"parameters": {
-						"path": "\"results[0]id\"",
-						"json": "\"[{\"\"id\"\":1001}]\""
-					}
-				}
-			],
-			"sid": 914846159275275,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 849991413947759,
-					"parameters": {
-						"key": 115
-					}
-				}
-			],
+			"conditions": [],
 			"actions": [],
 			"sid": 778212272006264
 		},
@@ -7192,6 +7220,339 @@
 				}
 			],
 			"sid": 315029090650363
+		},
+		{
+			"functionName": "RecalculateScore",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 505049253926508,
+					"parameters": {
+						"type": "log",
+						"message": "\"FUNCTION RECALCULATE\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 962809006579314,
+					"parameters": {
+						"variable": "FinalScore",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 846378350632189,
+					"parameters": {
+						"variable": "CoinCount",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 215553673411134,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 965659266979545,
+							"parameters": {
+								"object": "CoinSteel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 441670365260798,
+							"parameters": {
+								"type": "log",
+								"message": "CoinSteel.FinalValue"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 290534810447584,
+							"parameters": {
+								"variable": "FinalScore",
+								"value": "CoinSteel.FinalValue"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 306038426840310,
+							"parameters": {
+								"variable": "CoinCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 734578031792757
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 881073805521297,
+							"parameters": {
+								"variable": "PrizeFund",
+								"value": "START_Prize_Fund - FinalScore"
+							}
+						}
+					],
+					"sid": 136784909951285
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "UpdateUIScore",
+							"sid": 159430056837347
+						}
+					],
+					"sid": 505161699573511
+				}
+			]
+		},
+		{
+			"functionName": "NORMAL",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 642457868894496,
+					"parameters": {
+						"type": "log",
+						"message": "\"NORMAL\""
+					}
+				}
+			],
+			"sid": 767142842182429,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-last-created",
+							"objectClass": "System",
+							"sid": 773304799678474,
+							"parameters": {
+								"object": "CoinSteel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "CoinSteel",
+							"sid": 335324308272479,
+							"parameters": {
+								"instance-variable": "FinalValue",
+								"value": "CoinSteel.BaseValue"
+							}
+						},
+						{
+							"callFunction": "RecalculateScore",
+							"sid": 239003443276825
+						}
+					],
+					"sid": 468507974145842
+				}
+			]
+		},
+		{
+			"functionName": "START",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 896446377977156,
+					"parameters": {
+						"type": "log",
+						"message": "\"START\""
+					}
+				}
+			],
+			"sid": 873366899007659,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 508285124373788,
+							"parameters": {
+								"object": "CoinSteel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 554337277548836,
+							"parameters": {
+								"seconds": "loopindex*0.15",
+								"use-timescale": true
+							}
+						}
+					],
+					"sid": 600381537858824,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CoinSteel",
+									"sid": 753406769345623,
+									"parameters": {
+										"instance-variable": "FinalValue",
+										"value": "CoinSteel.BaseValue"
+									}
+								},
+								{
+									"callFunction": "RecalculateScore",
+									"sid": 954793568772556
+								}
+							],
+							"sid": 728783908029922
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "FLAT",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 976211017430113,
+					"parameters": {
+						"type": "log",
+						"message": "\"FLAT\""
+					}
+				}
+			],
+			"sid": 609425595967923,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-last-created",
+							"objectClass": "System",
+							"sid": 394143097497537,
+							"parameters": {
+								"object": "CoinSteel"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 358115591556495
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 286796771939768,
+							"parameters": {
+								"object": "CoinSteel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 915951908412115,
+							"parameters": {
+								"seconds": "loopindex*0.15",
+								"use-timescale": true
+							}
+						}
+					],
+					"sid": 449014330814424,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "CoinSteel",
+									"sid": 918035983190836,
+									"parameters": {
+										"instance-variable": "BonusType",
+										"comparison": 0,
+										"value": "\"normal\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CoinSteel",
+									"sid": 358323121563635,
+									"parameters": {
+										"instance-variable": "FinalValue",
+										"value": "FinalScore + FlatBonus"
+									}
+								}
+							],
+							"sid": 810716181946995
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 288943987179898

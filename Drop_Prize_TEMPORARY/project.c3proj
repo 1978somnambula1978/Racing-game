@@ -153,14 +153,9 @@
 			"DEBAGING",
 			"CoinGhost",
 			"FieldMask",
-			"UI_CoinGhost",
-			"UI_CoinSteel",
 			"MoveIcon",
-			"UI_FinalScore",
 			"x",
-			"UI_MultyPLayer",
 			"UI_Line_Bonus",
-			"UI_ID",
 			"TV_Animation",
 			"BG",
 			"BG_1",
@@ -169,8 +164,7 @@
 			"Exit",
 			"NewPLayer",
 			"Resize",
-			"UI_Project",
-			"UI_ID2"
+			"Fantom"
 		],
 		"subfolders": [
 			{
@@ -217,6 +211,20 @@
 				],
 				"subfolders": [],
 				"name": "JSON"
+			},
+			{
+				"items": [
+					"UI_CoinGhost",
+					"UI_CoinSteel",
+					"UI_FinalScore",
+					"UI_ID",
+					"UI_ID2",
+					"UI_MultyPLayer",
+					"UI_Project",
+					"UI_PrizeFund"
+				],
+				"subfolders": [],
+				"name": "UI"
 			}
 		]
 	},

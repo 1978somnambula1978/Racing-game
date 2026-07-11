@@ -1,0 +1,34 @@
+{
+	"name": "UI_PrizeFund",
+	"plugin-id": "Spritefont2",
+	"sid": 395569870683724,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 508824330777798
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 127895881005636
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 2048,
+		"height": 2048,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 675490,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

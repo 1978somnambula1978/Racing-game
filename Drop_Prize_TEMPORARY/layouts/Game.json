@@ -1228,9 +1228,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 700,
+						"x": 1160,
 						"y": 120,
-						"width": 1200,
+						"width": 680,
 						"height": 220,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -1570,6 +1570,99 @@
 						"y": 800,
 						"width": 380,
 						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "UI_PrizeFund",
+					"properties": {
+						"text": "",
+						"enable-bbcode": true,
+						"character-width": 147,
+						"character-height": 163,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "[[35,\" \"],[36,\"|\"],[42,\"'\"],[44,\".:\"],[45,\",;\"],[46,\"!\"],[50,\"[\"],[51,\"]`\"],[52,\"il\"],[55,\"fjt\"],[59,\"()\"],[60,\"-\"],[61,\"I\"],[63,\"s\"],[65,\"1\"],[66,\"°\"],[67,\"Jrz\"],[71,\"Sc\"],[72,\"Z\"],[74,\"C\\\"\"],[76,\"F?\"],[77,\"Lxy\"],[78,\"Ev*\"],[79,\"e\"],[81,\"U\"],[82,\"3\"],[83,\"No5\"],[84,\"Tagp7€\"],[85,\"bnq028\"],[86,\"XYd69\"],[87,\"hu4\"],[88,\"AVk\"],[90,\"\\\\/$£\"],[91,\"O\"],[93,\"Q\"],[94,\"BDGKPR_\"],[96,\"H\"],[99,\"~\"],[100,\"+=<>\"],[101,\"M\"],[106,\"#\"],[107,\"&\"],[110,\"w\"],[119,\"Wm\"],[122,\"%\"],[145,\"@\"]]",
+						"scale": 0.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 62,
+					"sid": 740797506340720,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 360,
+						"y": 120,
+						"width": 680,
+						"height": 220,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "MINI_TV_Animation",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 63,
+					"sid": 588279036407322,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1860,
+						"y": -220,
+						"width": 50,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
